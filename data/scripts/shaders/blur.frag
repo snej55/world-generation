@@ -24,5 +24,6 @@ void main() {
     vec4 color = vec4(0.0);
     for (int i = 0; i < gaussKernel3x3.length(); ++i)
         color += gaussKernel3x3[i].w * texture(light, uvs.xy + texelSize * gaussKernel3x3[i].xy);
+    color *= 0.4;
     f_color = texture(tex, uvs.xy) - color;
 }
